@@ -43,6 +43,7 @@ namespace DiceRoller
 
         public class Dice
         {
+            //Separate methods written intentionally to indicate different dice and leave room for special features for individual dice.
             public int GetD4Result()
             {
                 Random random = new Random();
