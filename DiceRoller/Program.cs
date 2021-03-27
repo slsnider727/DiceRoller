@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DiceRoller
 {
@@ -43,6 +45,7 @@ namespace DiceRoller
 
         public class Dice
         {
+            //Intentionally kept these separate to indicate different dice.
             public int GetD4Result()
             {
                 Random random = new Random();
@@ -90,6 +93,22 @@ namespace DiceRoller
                 Random random = new Random();
                 int randomInt = random.Next(1, 101);
                 return randomInt;
+            }
+        }
+
+        public class StatRoller
+        {
+            public int GetBaseStatScore()
+            {
+                Random random = new Random();
+                //Don't allow 1s because those would be re-rolled anyway. This affects statistical probability, but is a faster/simpler calculation.
+                int d6One = random.Next(2, 7);
+                int d6Two = random.Next(2, 7);
+                int d6Three = random.Next(2, 7);
+                int d6Four = random.Next(2, 7);
+                var rolls = new List<int> { d6One, d6Two, d6Three, d6Four};
+                rolls.Remove(rolls.Min());
+                return rolls.Sum();
             }
         }
     }
