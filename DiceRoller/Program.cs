@@ -37,21 +37,29 @@ namespace DiceRoller
             public int GetD10Result()
             {
                 Random random = new Random();
+                int randomInt = random.Next(1, 10);
+                return randomInt;
             }
 
             public int GetD12Result()
             {
                 Random random = new Random();
+                int randomInt = random.Next(1, 12);
+                return randomInt;
             }
 
             public int GetD20Result()
             {
                 Random random = new Random();
+                int randomInt = random.Next(1, 20);
+                return randomInt;
             }
 
             public int GetD100Result()
             {
                 Random random = new Random();
+                int randomInt = random.Next(1, 4100);
+                return randomInt;
             }
         }
     }
