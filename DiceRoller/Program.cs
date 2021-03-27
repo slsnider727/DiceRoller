@@ -58,7 +58,7 @@ namespace DiceRoller
             public int GetD100Result()
             {
                 Random random = new Random();
-                int randomInt = random.Next(1, 4100);
+                int randomInt = random.Next(1, 100);
                 return randomInt;
             }
         }
