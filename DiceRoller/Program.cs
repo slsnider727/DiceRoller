@@ -46,49 +46,49 @@ namespace DiceRoller
             public int GetD4Result()
             {
                 Random random = new Random();
-                int randomInt = random.Next(1, 4);
+                int randomInt = random.Next(1, 5);
                 return randomInt;
             }
 
             public int GetD6Result()
             {
                 Random random = new Random();
-                int randomInt = random.Next(1, 6);
+                int randomInt = random.Next(1, 7);
                 return randomInt;
             }
 
             public int GetD8Result()
             {
                 Random random = new Random();
-                int randomInt = random.Next(1, 8);
+                int randomInt = random.Next(1, 9);
                 return randomInt;
             }
 
             public int GetD10Result()
             {
                 Random random = new Random();
-                int randomInt = random.Next(1, 10);
+                int randomInt = random.Next(1, 11);
                 return randomInt;
             }
 
             public int GetD12Result()
             {
                 Random random = new Random();
-                int randomInt = random.Next(1, 12);
+                int randomInt = random.Next(1, 13);
                 return randomInt;
             }
 
             public int GetD20Result()
             {
                 Random random = new Random();
-                int randomInt = random.Next(1, 20);
+                int randomInt = random.Next(1, 21);
                 return randomInt;
             }
 
             public int GetD100Result()
             {
                 Random random = new Random();
-                int randomInt = random.Next(1, 100);
+                int randomInt = random.Next(1, 101);
                 return randomInt;
             }
         }
