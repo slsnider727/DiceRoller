@@ -96,9 +96,24 @@ namespace DiceRoller
             }
         }
 
-        public class StatRoller
+        public class Character
         {
-            public int GetBaseStatScore()
+            public void DisplayBaseStats()
+            {
+                Console.WriteLine("Stat scores to assign:");
+                foreach (var score in RollBaseStats())
+                {
+                    Console.WriteLine(score);
+                }
+                Console.WriteLine($"Discretionary points:{RollDiscretionaryPoints()}");
+            }
+
+            public int[] RollBaseStats()
+            {
+                return new int[] { GenerateBaseStatScore(), GenerateBaseStatScore(), GenerateBaseStatScore(), GenerateBaseStatScore(), GenerateBaseStatScore(), GenerateBaseStatScore() };
+            }
+
+            public int GenerateBaseStatScore()
             {
                 Random random = new Random();
                 //Don't allow 1s because those would be re-rolled anyway. This affects statistical probability, but is a faster/simpler calculation.
@@ -109,6 +124,12 @@ namespace DiceRoller
                 var rolls = new List<int> { d6One, d6Two, d6Three, d6Four};
                 rolls.Remove(rolls.Min());
                 return rolls.Sum();
+            }
+
+            public int RollDiscretionaryPoints()
+            {
+                Random random = new Random();
+                return random.Next(1, 9);
             }
         }
     }
